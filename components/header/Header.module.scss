@@ -41,10 +41,26 @@
 			align-items: center;
 			&__profile {
 				display: flex;
+				align-items: center;
+				padding: 12px 0;
+				a {
+					color: var(--w, #fff);
+					font-family: Inter;
+					font-size: 18px;
+					font-style: normal;
+					font-weight: 400;
+					line-height: 130%;
+					text-decoration: none;
+					margin-right: 40px;
+				}
+				img {
+					border-radius: 40px;
+					margin-right: 15px;
+				}
 			}
 			&__auth {
 				display: flex;
-				&__button {
+				&__btn {
 					padding: 19px 32px;
 					background: none;
 					border: none;

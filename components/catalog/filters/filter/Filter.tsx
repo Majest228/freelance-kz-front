@@ -5,7 +5,7 @@ import ArrowFilterIco from '@/components/svgs/ArrowFilter'
 
 const Filter = ({ filter }: IFilters) => {
 	return (
-		<div className={styles.filter}>
+		<div key={filter.id} className={styles.filter}>
 			<label className={styles.filter__label} htmlFor={filter.id}>
 				<input
 					className={styles.filter__label__input}

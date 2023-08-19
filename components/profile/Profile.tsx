@@ -1,225 +1,204 @@
-import Image from 'next/image'
+'use client'
+import {UserService} from '@/services/user/user.service'
+import {useParams, usePathname} from 'next/navigation'
+import React, {useState} from 'react'
+import {useQuery} from 'react-query'
 import styles from './Profile.module.scss'
-import user from '../../assets/user.png'
-import StatusDot from '../ui/status-dot/StatusDot'
-import country from '../../assets/country.png'
-import HomeIco from '../svgs/Home'
-import StarIco from '../svgs/Star'
-import Line from '../ui/line/Line'
+import ImageDefault from '../ui/image/ImageDefault'
+import ImageComponent from '../ui/image/ImageComponent'
+import ProfileInfo from '../ui/profile/profile-info/ProfileInfo'
 import Link from 'next/link'
+import Line from '../ui/line/Line'
+import StarIco from '../svgs/Star'
+import Image from 'next/image'
 import port from '../../assets/portfolio.png'
+
 const Profile = () => {
-	return (
-		<div className={styles.profile}>
-			<div className={styles.profile__container}>
-				<div className={styles.profile__header}>
-					<div className={styles.profile__header__left}>
-						<div
-							style={{ width: '225px', height: '225px' }}
-							className={styles.profile__header__left__images}
-						>
-							<Image
-								src={user}
-								alt='user'
-								width={0}
-								height={0}
-								style={{
-									borderRadius: '21px',
-									display: 'block',
-									backgroundSize: 'cover',
-									backgroundPosition: 'center',
-									width: '100%',
-									height: '100%',
-								}}
-							/>
-						</div>
+    const pathname = usePathname()
+    const params = useParams()
+    const parts = pathname.split('/')
+    const singlePathname: string = parts[1]
+    const [type, setType] = useState(singlePathname)
 
-						<div className={styles.profile__header__left__info}>
-							<h3 className={styles.profile__header__left__info__name}>
-								Дмитрий Моисеенко
-							</h3>
-							<p className={styles.profile__header__left__info__profession}>
-								Frontend developer
-							</p>
-							<div className={styles.profile__header__left__info__status}>
-								<div
-									className={styles.profile__header__left__info__status__show}
-								>
-									<StatusDot background='#D1D1D1' />
-									<p
-										className={
-											styles.profile__header__left__info__status__show__text
-										}
-									>
-										Был онлайн 14 часов назад
-									</p>
-								</div>
-								<div
-									className={
-										styles.profile__header__left__info__status__location
-									}
-								>
-									<Image src={country} alt='country' width={18} height={13} />
-									<p>Варшава, Польша</p>
-								</div>
-							</div>
-							<div className={styles.profile__header__left__info__date}>
-								<div className={styles.profile__header__left__info__date__reg}>
-									<HomeIco />
-									<p>2 года на сервисе</p>
-								</div>
-								<div
-									className={styles.profile__header__left__info__date__review}
-								>
-									<div
-										className={
-											styles.profile__header__left__info__date__review__stars
-										}
-									>
-										<StarIco />
-										<StarIco />
-										<StarIco />
-										<StarIco />
-										<StarIco />
-									</div>
-									<p>133 отзыва</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div className={styles.profile__header__right}>
-						<button className={styles.profile__header__right__offer}>
-							Предложить заказ
-						</button>
-						<button className={styles.profile__header__right__customer}>
-							Профиль заказчика
-						</button>
-					</div>
-				</div>
-				<Line bottom={33} top={40} />
-				<div className={styles.profile__content}>
-					<div className={styles.profile__content__left}>
-						<p className={styles.profile__content__left__description}>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-							consectetur iure alias delectus in, ut dolore suscipit et.
-							Cupiditate, libero! Fugit impedit ab ullam omnis dolor provident
-							beatae sint cumque, ipsum voluptatum, dolores ipsa modi eius
-							voluptatem doloribus vel soluta in esse dolorum nobis. Dolorem
-							dignissimos ducimus assumenda aliquid eum.
-						</p>
-						<Line bottom={33} top={40} />
-						<div className={styles.profile__content__left__portfolio}>
-							<div className={styles.profile__content__left__portfolio__title}>
-								<h3>Работы в портфолио</h3>
-								<Link href={'/'}>Смотреть все работы</Link>
-							</div>
-							<Line bottom={33} top={40} />
-							<div className={styles.profile__content__left__portfolio__items}>
-								<Image src={port} alt='port' width={276} height={180} />
-								<Image src={port} alt='port' width={276} height={180} />
-								<Image src={port} alt='port' width={276} height={180} />
-								<Image src={port} alt='port' width={276} height={180} />
-								<Image src={port} alt='port' width={276} height={180} />
-								<Image src={port} alt='port' width={276} height={180} />
-							</div>
-						</div>
-						<Line bottom={33} top={40} />
-					</div>
-					<div className={styles.profile__content__right}>123</div>
-				</div>
-			</div>
-		</div>
-		// <div className={styles.profile}>
-		// 	<div className={styles.profile__container}>
-		// 		<div className={styles.profile__header}>
-		// <div className={styles.profile__header__left}>
-		// 	<div
-		// 		style={{ width: '225px', height: '225px' }}
-		// 		className={styles.profile__header__left__images}
-		// 	>
-		// 		<Image
-		// 			src={user}
-		// 			alt='user'
-		// 			width={0}
-		// 			height={0}
-		// 			style={{
-		// 				borderRadius: '21px',
-		// 				display: 'block',
-		// 				backgroundSize: 'cover',
-		// 				backgroundPosition: 'center',
-		// 				width: '100%',
-		// 				height: '100%',
-		// 			}}
-		// 		/>
-		// 	</div>
-
-		// 	<div className={styles.profile__header__left__info}>
-		// 		<h3 className={styles.profile__header__left__info__name}>
-		// 			Дмитрий Моисеенко
-		// 		</h3>
-		// 		<p className={styles.profile__header__left__info__profession}>
-		// 			Frontend developer
-		// 		</p>
-		// 		<div className={styles.profile__header__left__info__status}>
-		// 			<div
-		// 				className={styles.profile__header__left__info__status__show}
-		// 			>
-		// 				<StatusDot background='#D1D1D1' />
-		// 				<p
-		// 					className={
-		// 						styles.profile__header__left__info__status__show__text
-		// 					}
-		// 				>
-		// 					Был онлайн 14 часов назад
-		// 				</p>
-		// 			</div>
-		// 			<div
-		// 				className={
-		// 					styles.profile__header__left__info__status__location
-		// 				}
-		// 			>
-		// 				<Image src={country} alt='country' width={18} height={13} />
-		// 				<p>Варшава, Польша</p>
-		// 			</div>
-		// 		</div>
-		// 		<div className={styles.profile__header__left__info__date}>
-		// 			<div className={styles.profile__header__left__info__date__reg}>
-		// 				<HomeIco />
-		// 				<p>2 года на сервисе</p>
-		// 			</div>
-		// 			<div
-		// 				className={styles.profile__header__left__info__date__review}
-		// 			>
-		// 				<div
-		// 					className={
-		// 						styles.profile__header__left__info__date__review__stars
-		// 					}
-		// 				>
-		// 					<StarIco />
-		// 					<StarIco />
-		// 					<StarIco />
-		// 					<StarIco />
-		// 					<StarIco />
-		// 				</div>
-		// 				<p>133 отзыва</p>
-		// 			</div>
-		// 		</div>
-		// 	</div>
-		// </div>
-		// <div className={styles.profile__header__right}>
-		// 	<button className={styles.profile__header__right__offer}>
-		// 		Предложить заказ
-		// 	</button>
-		// 				<button className={styles.profile__header__right__customer}>
-		// <div className={styles.profile__content__left}>
-		// 				<p className={styles.profile__content__left__description}></p>
-		// 			</div>
-		// 			<div className={styles.profile__content__right}></div>
-		// 		</div>
-		// 	</div>
-		// 	</div>
-		// 		</div>
-	)
+    const {data: profile, isLoading: isLoadingProfile} = useQuery(
+        'profile',
+        () => UserService.getProfile()
+    )
+    return (
+        <div className={styles.profile}>
+            <div className={styles.profile__container}>
+                <div className={styles.profile__header}>
+                    <div className={styles.profile__header__left}>
+                        {profile?.avatarPath == '' ? (
+                            <ImageDefault
+                                borderRadius={21}
+                                text={isLoadingProfile ? '' : profile?.login[0].toUpperCase()}
+                            />
+                        ) : (
+                            <ImageComponent
+                                alt='profile'
+                                borderRadius={21}
+                                image={`http://localhost:7777/api/portfolio/users/${profile?.avatarPath}`}
+                            />
+                        )}
+                        <ProfileInfo profile={profile} type={'settings'}/>
+                    </div>
+                    <div className={styles.profile__header__right}>
+                        <>
+                            <Link
+                                href={'/profile/settings/info'}
+                                className={styles.profile__header__right__offer}
+                            >
+                                Изменить резюме
+                            </Link>
+                        </>
+                    </div>
+                </div>
+                <Line top={40}/>
+                <div className={styles.profile__content}>
+                    <div className={styles.profile__content__left}>
+                        <h3 className={styles.profile__content__left__title}>
+                            {profile?.title == '' ? (
+                                <h4>Пользователь не ввел заголовок</h4>
+                            ) : (
+                                profile?.title
+                            )}
+                        </h3>
+                        <p
+                            className={styles.profile__content__left__description}
+                            dangerouslySetInnerHTML={{
+                                __html: profile?.description,
+                            }}
+                        ></p>
+                        <Line bottom={33} top={40}/>
+                        <div className={styles.profile__content__left__portfolio}>
+                            <div className={styles.profile__content__left__portfolio__title}>
+                                <h3>Работы в портфолио</h3>
+                                <Link href={'/'}>Смотреть все работы</Link>
+                            </div>
+                            <Line bottom={33} top={40}/>
+                            <div className={styles.profile__content__left__portfolio__items}>
+                                <Image src={port} alt='port' width={276} height={180}/>
+                                <Image src={port} alt='port' width={276} height={180}/>
+                                <Image src={port} alt='port' width={276} height={180}/>
+                                <Image src={port} alt='port' width={276} height={180}/>
+                                <Image src={port} alt='port' width={276} height={180}/>
+                                <Image src={port} alt='port' width={276} height={180}/>
+                            </div>
+                        </div>
+                        <Line bottom={33} top={40}/>
+                        <div className={styles.profile__content__left__reviews}>
+                            <div className={styles.profile__content__left__reviews__header}>
+                                <h3>Последние отзывы</h3>
+                                <Link href={'/'}>Читать все отзывы</Link>
+                            </div>
+                            <Line bottom={33} top={40}/>
+                            <div className={styles.profile__content__left__reviews__item}>
+                                <Link
+                                    href={'/'}
+                                    className={
+                                        styles.profile__content__left__reviews__item__title
+                                    }
+                                >
+                                    Разработка фирменного стиля для свечей ручной работы
+                                </Link>
+                                <div
+                                    className={
+                                        styles.profile__content__left__reviews__item__content
+                                    }
+                                >
+                                    <div
+                                        className={
+                                            styles.profile__content__left__reviews__item__content__rating
+                                        }
+                                    >
+                                        <div
+                                            className={
+                                                styles.profile__content__left__reviews__item__content__rating__stars
+                                            }
+                                        >
+                                            <StarIco w='25' h='25'/>
+                                            <StarIco w='25' h='25'/>
+                                            <StarIco w='25' h='25'/>
+                                            <StarIco w='25' h='25'/>
+                                            <StarIco w='25' h='25'/>
+                                        </div>
+                                        <h3
+                                            className={
+                                                styles.profile__content__left__reviews__item__content__rating__name
+                                            }
+                                        >
+                                            {/* {freelancer?.name} {freelancer?.surname} */}
+                                            Имя
+                                        </h3>
+                                        <span
+                                            className={
+                                                styles.profile__content__left__reviews__item__content__rating__date
+                                            }
+                                        >
+											11 июня 2021
+										</span>
+                                    </div>
+                                    <div
+                                        className={
+                                            styles.profile__content__left__reviews__item__content__plus
+                                        }
+                                    >
+                                        <h3>Плюсы</h3>
+                                        <p>Компактный и мощный</p>
+                                    </div>
+                                    <div
+                                        className={
+                                            styles.profile__content__left__reviews__item__content__plus
+                                        }
+                                    >
+                                        <h3>Минусы</h3>
+                                        <p>Нет</p>
+                                    </div>
+                                    <div
+                                        className={
+                                            styles.profile__content__left__reviews__item__content__plus
+                                        }
+                                    >
+                                        <h3>Комментарий</h3>
+                                        <p>
+                                            Отлично взбивает и измельчает замороженные ягоды , яблоки
+                                            , морковь. Мы делаем смузи чаще , благодаря этому
+                                            блендеру. Заряжается быстро и зарядки хватает надолго. У
+                                            данной модели защищён вход заряда , поэтому вода туда не
+                                            попадает при мытье. Пластик высокого качества , запаха
+                                            нет. Летом будем брать с собой в машину , так как usb
+                                            заряд. При выборе техники , всегда выигрывает фирма
+                                            kitfort, так как цена-качество
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* <Line top={40} /> */}
+                        </div>
+                    </div>
+                    <div className={styles.profile__content__right}>
+                        <div className={styles.profile__content__right__content}>
+                            <h3 className={styles.profile__content__right__content__title}>
+                                Информация о фрилансере
+                            </h3>
+                            <div className={styles.profile__content__right__content__link}>
+                                <Link href={'/'}>Резюме</Link>
+                            </div>
+                            <div className={styles.profile__content__right__content__link}>
+                                <Link href={'/'}>Примеры работ</Link>
+                                <span>13</span>
+                            </div>
+                            <div className={styles.profile__content__right__content__link}>
+                                <Link href={'/'}>Отзывы заказчиков</Link>
+                                <span>133</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default Profile

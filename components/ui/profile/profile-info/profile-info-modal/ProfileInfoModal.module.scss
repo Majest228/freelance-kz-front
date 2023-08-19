@@ -1,0 +1,127 @@
+.profile {
+	&__modal {
+		padding: 46px 0;
+		z-index: 99;
+		top: 100px;
+		position: absolute;
+		width: 676px;
+		border-radius: 15px;
+		background: var(--w, #fff);
+		&__close {
+			background: none;
+			border: none;
+			cursor: pointer;
+			position: absolute;
+			right: 30px;
+		}
+		&__btn {
+			margin: 0 46px;
+			color: var(--3, #2cc961);
+			font-family: Roboto;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 130%;
+			border-radius: 15px;
+			background: var(--4, #e4ffed);
+			border: none;
+			padding: 13px 21px;
+			cursor: pointer;
+		}
+		&__content {
+			&__title {
+				padding: 0 46px;
+				color: var(--1, #1a1a1a);
+				font-family: Roboto;
+				font-size: 30px;
+				font-style: normal;
+				font-weight: 500;
+				line-height: 140%;
+			}
+			&__personal {
+				display: flex;
+				padding: 0 46px;
+				justify-content: space-between;
+				align-items: center;
+				&__info {
+					&__item {
+						display: flex;
+						flex-direction: column;
+						margin-bottom: 20px;
+						label {
+							color: var(--d, #171717);
+							font-family: Open Sans;
+							font-size: 20px;
+							font-style: normal;
+							font-weight: 600;
+							margin-bottom: 8px;
+							line-height: 140%;
+						}
+						input {
+							padding-left: 15px;
+							border-radius: 15px;
+							border: 1px solid var(--7, #d1d1d1);
+							width: 274px;
+							height: 46px;
+						}
+					}
+				}
+			}
+			&__profession {
+				padding: 0 46px;
+				display: flex;
+				flex-direction: column;
+				label {
+					color: var(--d, #171717);
+					font-family: Open Sans;
+					font-size: 20px;
+					font-style: normal;
+					font-weight: 600;
+					line-height: 140%;
+					margin-bottom: 8px;
+				}
+				select {
+					-webkit-appearance: none;
+					-moz-appearance: none;
+					appearance: none;
+					outline: 0;
+					box-sizing: none;
+					border-radius: 15px;
+					border: 1px solid var(--7, #d1d1d1);
+					height: 46px;
+					padding-left: 15px;
+				}
+			}
+			&__cities {
+				padding: 0 46px;
+				display: flex;
+				justify-content: space-between;
+				&__item {
+					display: flex;
+					flex-direction: column;
+					label {
+						color: var(--d, #171717);
+						font-family: Open Sans;
+						font-size: 20px;
+						font-style: normal;
+						font-weight: 600;
+						line-height: 140%;
+						margin-bottom: 8px;
+					}
+					select {
+						-webkit-appearance: none;
+						-moz-appearance: none;
+						appearance: none;
+						outline: 0;
+						width: 274px;
+						box-sizing: none;
+						border-radius: 15px;
+						border: 1px solid var(--7, #d1d1d1);
+						height: 46px;
+						padding-left: 15px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+.image {
+	&__text {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: var(--gray-6, #f2f2f2);
+		text-align: center;
+		font-family: Open Sans;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	}
+}

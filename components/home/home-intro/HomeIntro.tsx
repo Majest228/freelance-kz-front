@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import styles from '../Home.module.scss'
 import flag from '../../../assets/flag.png'
+import Link from 'next/link'
+import Auth from '@/components/ui/auth/Auth'
 const HomeIntro = () => {
 	return (
 		<div className={styles.home__intro}>
@@ -13,16 +15,12 @@ const HomeIntro = () => {
 						Разместите свой заказ на бирже или станьте исполнителем
 					</p>
 					<div className={styles.home__intro__content__left__controlls}>
-						<button
+						<Link
+							href={'/orders/create'}
 							className={styles.home__intro__content__left__controlls__order}
 						>
 							Разместить заказ
-						</button>
-						<button
-							className={styles.home__intro__content__left__controlls__register}
-						>
-							Стать исполнителем
-						</button>
+						</Link>
 					</div>
 				</div>
 				<div className={styles.home__intro__content__right}>

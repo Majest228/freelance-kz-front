@@ -5,12 +5,14 @@ import HeaderNavigation from './header-navigation/HeaderNavigation'
 import { Open_Sans } from 'next/font/google'
 import HeaderLang from './header-lang/HeaderLang'
 import HeaderProfile from './header-profile/HeaderProfile'
+import { useState } from 'react'
+import Auth from '../ui/auth/Auth'
 const openSans = Open_Sans({
 	subsets: ['latin'],
 	weight: ['300', '400', '500', '600', '700', '800'],
 })
 
-const Header = () => {
+const Header = ({ isOpened, setIsOpened }) => {
 	return (
 		<header style={openSans.style} className={styles.header}>
 			<div className={styles.header__container}>
@@ -22,7 +24,7 @@ const Header = () => {
 						<HeaderNavigation />
 					</div>
 					<div className={styles.header__content__right}>
-						<HeaderProfile />
+						<HeaderProfile isOpened={isOpened} setIsOpened={setIsOpened} />
 						<HeaderLang />
 					</div>
 				</div>

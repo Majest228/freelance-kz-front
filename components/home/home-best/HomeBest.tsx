@@ -9,7 +9,7 @@ const HomeBest = () => {
 				<h3 className={styles.home__best__header__title}>
 					Выбирайте лучших фрилансеров
 				</h3>
-				<Link className={styles.home__best__header__link} href={'/'}>
+				<Link className={styles.home__best__header__link} href={'/freelancers'}>
 					Все фрилансеры
 				</Link>
 			</div>

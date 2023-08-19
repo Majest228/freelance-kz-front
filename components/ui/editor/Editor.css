@@ -1,0 +1,110 @@
+/* button {
+	margin-top: 10px;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	padding: 8px 16px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+/* Adjust the toolbar styles */
+/* .rdw-editor-toolbar {
+	border: 1px solid #ddd;
+	border-top-right-radius: 5px;
+	padding: 5px;
+}
+
+.rdw-editor-toolbar {
+	margin: 0;
+}
+
+.rdw-editor-toolbar button {
+	background-color: transparent;
+	border: none;
+	padding: 5px 10px;
+	margin: 0 2px;
+	color: #333;
+	cursor: pointer;
+}
+
+.rdw-editor-toolbar button:hover {
+	background-color: #f0f0f0;
+}
+
+.rdw-editor-main {
+	padding: 48px 32px;
+	min-height: 466px;
+	border: 1px solid #ddd;
+	border-top: none;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background-color: #fff;
+	color: #333;
+}
+
+.rdw-link-modal {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	padding: 10px;
+	border-radius: 5px;
+}
+.rdw-option-wrapper {
+	border: none;
+}
+
+.rdw-link-modal input {
+	width: 100%;
+	padding: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+}
+
+.rdw-link-modal button {
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	padding: 8px 16px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.rdw-link-modal button.cancel {
+	background-color: #ddd;
+	margin-right: 10px;
+}
+
+.rdw-link-modal button:hover {
+	background-color: #0056b3;
+}
+*/
+
+.ql-container {
+	border: 1px solid #ccc;
+	background-color: #fff;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	min-height: 466px;
+	padding: 48px 32px;
+}
+
+.ql-toolbar.ql-snow {
+	padding: 16px;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+}
+
+.ql-snow {
+	.ql-picker {
+		&.ql-size {
+			.ql-picker-label,
+			.ql-picker-item {
+				&::before {
+					content: attr(data-value) !important;
+				}
+			}
+		}
+	}
+}

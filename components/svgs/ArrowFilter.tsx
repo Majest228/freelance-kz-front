@@ -10,7 +10,7 @@ const ArrowFilterIco = ({ fill = 'none', w = 10, h = 10 }) => {
 			<path
 				d='M10.3332 3.33334L5.99984 8.00001L1.6665 3.33334'
 				stroke='#026BCB'
-				stroke-linecap='square'
+				strokeLinecap='square'
 			/>
 		</svg>
 	)

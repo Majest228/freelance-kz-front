@@ -12,7 +12,7 @@ const HomeContest = () => {
 					Все проекты
 				</Link>
 			</div>
-			<HomeProjectsList />
+			<HomeProjectsList type='contest' />
 		</div>
 	)
 }

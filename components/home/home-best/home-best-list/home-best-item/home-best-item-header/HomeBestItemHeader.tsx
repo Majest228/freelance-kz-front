@@ -3,15 +3,56 @@ import React from 'react'
 import styles from '../../../../Home.module.scss'
 import StarIco from '@/components/svgs/Star'
 import photo from '../../../../../../assets/photo.png'
-const HomeBestItemHeader = () => {
+import { IFreelancer } from '../../HomeBestList'
+import { useQuery } from 'react-query'
+import { UserService } from '@/services/user/user.service'
+import Link from 'next/link'
+import ImageComponent from '@/components/ui/image/ImageComponent'
+import ImageDefault from '@/components/ui/image/ImageDefault'
+const HomeBestItemHeader = ({
+	id,
+	name,
+	avatarPath,
+	cv,
+	date_born,
+	description,
+	email,
+	login,
+	phone,
+	rating,
+	smallDescription,
+	surname,
+	title,
+}: IFreelancer) => {
 	const stars = Array.from({ length: 5 })
+	console.log('login', login)
+
 	return (
 		<div className={styles.home__best__list__item__header}>
-			<Image src={photo} alt='photo' width={80} height={80} />
+			{avatarPath == '' ? (
+				<ImageDefault
+					borderRadius={21}
+					fz={48}
+					width={80}
+					height={80}
+					text={login[0]?.toUpperCase()}
+				/>
+			) : (
+				<ImageComponent
+					alt={'photo'}
+					width={80}
+					height={80}
+					borderRadius={0}
+					image={`http://localhost:7777/api/portfolio/users/${avatarPath}`}
+				/>
+			)}
 			<div className={styles.home__best__list__item__header__desc}>
-				<h3 className={styles.home__best__list__item__header__desc__text}>
-					Алексей Бычков
-				</h3>
+				<Link
+					href={`/freelancers/${id}`}
+					className={styles.home__best__list__item__header__desc__text}
+				>
+					{name} {surname}
+				</Link>
 				<div className={styles.home__best__list__item__header__desc__review}>
 					<div
 						className={

@@ -1,51 +1,63 @@
 .radio {
-	display: flex;
-	align-items: center;
-	margin-bottom: 26px;
-	&__button {
-		background: none;
-		border: none;
-		cursor: pointer;
-	}
-	&__label {
-		display: flex;
-		align-items: center;
-		&__title {
-			color: var(--d, #171717);
-			font-family: Open Sans;
-			font-size: 20px;
-			font-style: normal;
-			font-weight: 400;
-			margin-left: 15px;
-			line-height: 150%; /* 30px */
-		}
-		&__input {
-			display: none;
-		}
-		&__fake {
-			display: inline-block;
-			border-radius: 50%;
-			border: 1px solid var(--light-grey, #d1d1d1);
-			width: 24px;
-			height: 24px;
-			position: relative;
-			&::before {
-				content: '';
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				border-radius: 50%;
-				display: block;
-				transform: translate(-50%, -50%);
-				width: 10px;
-				background-color: #026bcb;
-				height: 10px;
-				opacity: 0;
-				transition: 0.2s;
-			}
-		}
-		&__input:checked + &__fake::before {
-			opacity: 1;
-		}
-	}
+
+  &__filter {
+    margin-bottom: 10px;
+
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+    margin-top: 28px;
+
+    &__label {
+      display: flex;
+
+      &__input {
+        display: none;
+      }
+
+      &__input:checked + &__fake::before {
+        opacity: 1;
+      }
+
+      &__input:checked + &__fake {
+        border-radius: 6px;
+        border: 1px solid var(--blue, #026bcb);
+        background: #e1f0ff;
+      }
+
+      &__fake {
+        display: inline-block;
+        border-radius: 6px;
+        border: 1px solid var(--light-grey, #d1d1d1);
+        width: 22px;
+        height: 22px;
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          display: block;
+          transform: translate(-50%, -50%);
+          width: 10px;
+          height: 8px;
+          background-image: url('../../../../assets/accept.png');
+          background-repeat: no-repeat;
+          opacity: 0;
+          transition: 0.2s;
+        }
+      }
+
+      &__title {
+        margin-left: 15px;
+        color: #000;
+        font-family: Open Sans;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 24px */
+      }
+    }
+  }
 }

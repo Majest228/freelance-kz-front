@@ -9,11 +9,11 @@ const HomeProjects = () => {
 				<h3 className={styles.home__projects__header__title}>
 					Последние проекты
 				</h3>
-				<Link className={styles.home__projects__header__link} href={'/'}>
+				<Link className={styles.home__projects__header__link} href={'/orders'}>
 					Все проекты
 				</Link>
 			</div>
-			<HomeProjectsList />
+			<HomeProjectsList type='order' />
 		</div>
 	)
 }

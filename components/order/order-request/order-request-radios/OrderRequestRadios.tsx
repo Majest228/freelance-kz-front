@@ -1,18 +1,38 @@
 import React from 'react'
 import styles from './OrderRequestRadios.module.scss'
 
-const OrderRequestRadios = () => {
-	return (
-		<div className={styles.radio}>
-			<label className={styles.radio__label}>
-				<input className={styles.radio__label__input} type='checkbox' />
-				<span className={styles.radio__label__fake}></span>
-				<p className={styles.radio__label__title}>
-					Комиссию 9% оплачивает заказчик
-				</p>
-			</label>
-		</div>
-	)
+const OrderRequestRadios = ({selectedOption, type, handleOptionChange}) => {
+    return (
+        <div className={styles.radio__filter}>
+            <label
+                className={styles.radio__filter__label}
+                htmlFor={type.id}
+            >
+                <input
+                    className={
+                        styles.radio__filter__label__input
+                    }
+                    type='radio'
+                    id={type.id}
+                    value={type.value}
+                    checked={selectedOption === type.value}
+                    onChange={handleOptionChange}
+                />
+                <span
+                    className={
+                        styles.radio__filter__label__fake
+                    }
+                ></span>
+                <p
+                    className={
+                        styles.radio__filter__label__title
+                    }
+                >
+                    {type.name}
+                </p>
+            </label>
+        </div>
+    )
 }
 
 export default OrderRequestRadios

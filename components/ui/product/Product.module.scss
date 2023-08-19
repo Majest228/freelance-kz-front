@@ -3,6 +3,7 @@
 	z-index: 3;
 	border: 1px solid #eee;
 	&__title {
+		text-decoration: none;
 		color: var(--d, #171717);
 		font-size: 22px;
 		font-style: normal;

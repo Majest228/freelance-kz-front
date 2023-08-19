@@ -6,6 +6,7 @@ import Line from '../ui/line/Line'
 import Search from '../ui/search/Search'
 import Orders from './orders/Orders'
 import Filters from './filters/Filters'
+import Freelancers from './freelancers/Freelancers'
 
 const Catalog = () => {
 	const type_catalog = [
@@ -53,24 +54,38 @@ const Catalog = () => {
 							: 'Поиск фрилансеров'}
 					</h3>
 					<Link className={styles.catalog__header__link} href={'/'}>
-						1957 открытых заказов
+						1957
+						{currentType?.id == 'orders'
+							? 'открытых заказов'
+							: 'свободных фрилансеров'}
 					</Link>
 				</div>
 				<Line top={40} />
 				<div className={styles.catalog__content}>
 					<div className={styles.catalog__content__left}>
-						<Search text={'Тест'} />
-						<div className={styles.catalog__content__left__filters}>
-							{data_filters.map(item => (
-								<li key={item.id}>
-									<p>{item.name}</p>
-								</li>
-							))}
-						</div>
-						<Orders />
+						<Search
+							text={
+								currentType?.id == 'orders'
+									? 'Поиск заказа'
+									: 'Поиск фрилансера'
+							}
+						/>
+						{currentType?.id == 'orders' ? (
+							<div className={styles.catalog__content__left__filters}>
+								{data_filters.map(item => (
+									<li key={item.id}>
+										<p>{item.name}</p>
+									</li>
+								))}
+							</div>
+						) : (
+							''
+						)}
+
+						{currentType?.id == 'orders' ? <Orders /> : <Freelancers />}
 					</div>
 					<div className={styles.catalog__content__right}>
-						<Filters />
+						<Filters type={currentType.id} />
 					</div>
 				</div>
 			</div>

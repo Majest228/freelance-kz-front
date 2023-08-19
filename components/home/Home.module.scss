@@ -29,6 +29,7 @@
 					margin-top: 40px;
 					display: flex;
 					&__order {
+						text-decoration: none;
 						cursor: pointer;
 						margin-right: 40px;
 						padding: 32px 42px;
@@ -36,18 +37,6 @@
 						background: var(--light, #e3ffdb);
 						border: none;
 						color: var(--arrow, #4db82d);
-						font-size: 20px;
-						font-style: normal;
-						font-weight: 600;
-						line-height: normal;
-					}
-					&__register {
-						cursor: pointer;
-						padding: 32px 42px;
-						border: none;
-						border-radius: 8px;
-						background: #e1f0ff;
-						color: var(--blue, #026bcb);
 						font-size: 20px;
 						font-style: normal;
 						font-weight: 600;
@@ -158,6 +147,7 @@
 					&__desc {
 						margin-left: 25px;
 						&__text {
+							text-decoration: none;
 							color: var(--d, #171717);
 							font-size: 22px;
 							font-style: normal;

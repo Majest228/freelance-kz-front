@@ -8,8 +8,8 @@ const HomeIco = () => {
 			xmlns='http://www.w3.org/2000/svg'
 		>
 			<path
-				fill-rule='evenodd'
-				clip-rule='evenodd'
+				fillRule='evenodd'
+				clipRule='evenodd'
 				d='M8 1L1 7V14C1 14.5523 1.44772 15 2 15H6V12C6 10.8954 6.89543 10 8 10C9.10457 10 10 10.8954 10 12V15H14C14.5523 15 15 14.5523 15 14V7L8 1Z'
 				fill='#E3FFDB'
 			/>

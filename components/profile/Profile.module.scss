@@ -3,6 +3,15 @@
 		max-width: 1268px;
 		margin: 0 auto;
 	}
+	&__notinfo {
+		margin-left: 33px;
+		color: var(--d, #171717);
+		font-family: Open Sans;
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 140%;
+	}
 	&__header {
 		margin-top: 34px;
 		display: flex;
@@ -105,6 +114,7 @@
 			display: flex;
 			flex-direction: column;
 			&__offer {
+				text-decoration: none;
 				cursor: pointer;
 				border: none;
 				padding: 22px 46px;
@@ -138,8 +148,18 @@
 	&__content {
 		display: flex;
 		&__left {
+			padding-bottom: 40px;
+			margin-top: 40px;
 			max-width: 949px;
 			width: 100%;
+			&__title {
+				color: var(--d, #171717);
+				font-family: Open Sans;
+				font-size: 44px;
+				font-style: normal;
+				font-weight: 600;
+				line-height: 140%;
+			}
 			&__description {
 				width: 909px;
 				color: var(--d, #171717);
@@ -179,6 +199,143 @@
 					grid-template-columns: repeat(auto-fill, 283px);
 					row-gap: 40px;
 					column-gap: 50px;
+				}
+			}
+			&__reviews {
+				&__header {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					margin-right: 40px;
+					h3 {
+						color: var(--d, #171717);
+						font-family: Open Sans;
+						font-size: 44px;
+						font-style: normal;
+						font-weight: 600;
+						line-height: 140%;
+					}
+					a {
+						color: var(--blue, #026bcb);
+						text-align: right;
+						font-family: Open Sans;
+						font-size: 20px;
+						font-style: normal;
+						font-weight: 400;
+						line-height: 150%;
+						text-decoration: none;
+					}
+				}
+				&__item {
+					margin-right: 40px;
+					&__title {
+						color: var(--blue, #026bcb);
+						font-family: Open Sans;
+						font-size: 36px;
+						font-style: normal;
+						font-weight: 600;
+						line-height: 140%;
+						text-decoration: none;
+					}
+					&__content {
+						&__rating {
+							margin-top: 32px;
+							display: flex;
+							align-items: center;
+							&__stars {
+								display: flex;
+								align-items: center;
+								max-width: 183px;
+								width: 100%;
+								svg {
+									margin-right: 10px;
+								}
+							}
+							&__name {
+								color: var(--d, #171717);
+								font-family: Open Sans;
+								font-size: 26px;
+								font-style: normal;
+								font-weight: 600;
+								line-height: 150%;
+								margin-left: 40px;
+								display: block;
+							}
+							&__date {
+								display: block;
+								color: #545454;
+								font-family: Open Sans;
+								font-size: 16px;
+								font-style: normal;
+								font-weight: 400;
+								line-height: 150%;
+								margin-left: 40px;
+							}
+						}
+						&__plus {
+							margin-top: 30px;
+							display: flex;
+							h3 {
+								color: var(--d, #171717);
+								font-family: Open Sans;
+								font-size: 20px;
+								font-style: normal;
+								font-weight: 400;
+								line-height: 150%;
+								max-width: 183px;
+								width: 100%;
+								margin-right: 40px;
+							}
+							p {
+								color: #545454;
+								font-family: Open Sans;
+								font-size: 20px;
+								font-style: normal;
+								font-weight: 400;
+								line-height: 150%;
+								max-width: 681px;
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+		&__right {
+			border-left: 2px solid #eee;
+			&__content {
+				padding: 40px;
+				&__title {
+					color: var(--d, #171717);
+					font-family: Open Sans;
+					font-size: 24px;
+					font-style: normal;
+					font-weight: 600;
+					line-height: 150%;
+				}
+				&__link {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					margin-top: 25px;
+					a {
+						color: var(--blue, #026bcb);
+						font-family: Roboto;
+						font-size: 20px;
+						font-style: normal;
+						font-weight: 400;
+						line-height: 150%;
+						text-decoration: none;
+					}
+					span {
+						color: var(--grey, #878787);
+						text-align: right;
+						font-family: Roboto;
+						font-size: 20px;
+						font-style: normal;
+						font-weight: 400;
+						line-height: 150%;
+					}
 				}
 			}
 		}

@@ -1,7 +1,8 @@
+import Catalog from '@/components/catalog/Catalog'
 import React from 'react'
 
 const Freelancers = () => {
-	return <div>page</div>
+	return <Catalog />
 }
 
 export default Freelancers
