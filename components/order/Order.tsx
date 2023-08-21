@@ -55,13 +55,11 @@ const Order = () => {
         data: dataOrderResponse,
         isLoading: isLoadingResponse
     } = useQuery(['get-response', params.slug], () => OrdersService.getResponseById(+params.slug))
-    console.log('data', dataOrderResponse)
-    console.log('ownerid', owner?.id, 'profile.id', profile?.id)
     const {formattedTime} = useGetDateTime(order?.createdAt)
     const newFormattedTime = formattedTime.split('-')
-    console.log(newFormattedTime)
     const findMonth = (id: string) => months.find((el) => el.id == id)
-
+    const checkUser = !!dataOrderResponse?.find(r => r.responder?.id == profile?.id)
+    console.log('checkUser', checkUser)
     return (
         <div className={styles.order}>
             <div className={styles.order__container}>
@@ -114,11 +112,16 @@ const Order = () => {
                     <div className={styles.order__content__left}>
                         <OrderDescription order={order}/>
                         <OrderApplication/>
+                        {owner?.id == profile?.id || checkUser ? "" :
+                            <>
+                                <Line top={31} bottom={40}/>
+                                <OrderRequest/>
+                            </>
+                        }
                         <Line top={31} bottom={40}/>
-                        {dataOrderResponse?.map(item => <OrderRequestList item={item}/>)}
-                        <Line top={31} bottom={40}/>
-                        {owner?.id == profile?.id ? "" :
-                            <OrderRequest/>}
+                        {dataOrderResponse?.map(item => <OrderRequestList ownerId={owner?.id} profileId={profile?.id}
+                                                                          orderId={order.id}
+                                                                          item={item}/>)}
                     </div>
                     <div className={styles.order__content__right}>
                         <OrderProfile owner={owner}/>

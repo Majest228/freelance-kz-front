@@ -59,6 +59,10 @@ export const OrdersService = {
     async getResponseById(orderId: number) {
         const res = await axiosWithoutToken(`/order/get-response-order/${orderId}`)
         return res.data
+    },
+    async removeResponseOrder(responseId: number) {
+        const res = await axiosWithToken.delete(`/order/removeResponseOrder/${responseId}`)
+        return res.data
     }
 
 
